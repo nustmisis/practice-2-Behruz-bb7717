@@ -22,6 +22,32 @@
 """
 
 year = input()
+animal_number = (year-2000) % 12
+  
+if animal_number ==0:
+    animal= "Дракон"
+elif animal_number ==1:
+    animal="Змея"
+elif animal_number ==2:
+    animal="Лощадь"
+elif animal_number ==3:
+    animal="Коза"
+elif animal_number ==4:
+    animal="Обезьяна"
+elif animal_number ==5:
+    animal="Петух"
+elif animal_number ==6:
+    animal="Собака"
+elif animal_number ==7:
+    animal="Свиня"
+elif animal_number ==8:
+    animal="Крыса"
+elif animal_number ==9:
+    animal="Бык"
+elif animal_number ==10:
+    animal="тигр"
+else:
+    animal="Кролик"
 
 
-print() #Животное
+print(animal)
