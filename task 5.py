@@ -41,4 +41,18 @@ bbbacacac, на это уйдёт 9 ходов, ниже указаны стро
 
 @author: workk
 """
+def count_moves(s, c):
+    moves = 0
+    c_count = 0
+    current_c_cont = 0
 
+    for char in s :
+        if char == c:
+            c_count += 1
+            moves += current_c_conut
+        else:
+            current_c_count += 1
+            return moves 
+        input_str, target_char = input().split()
+        moves_required = count_moves(input_str, target_char)
+print ( moves_required )
