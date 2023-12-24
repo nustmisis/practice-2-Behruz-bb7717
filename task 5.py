@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 """
 Задана строка S и символ С. За один ход можно поменять местами два соседних символа. Сколько потребуется ходов чтобы переместить все символы С в строке в начало строки, не меняя при этом порядок следования между остальным символами.
 
@@ -8,7 +8,7 @@ bbbacacac, на это уйдёт 9 ходов, ниже указаны стро
 
 2. bacbacabc
 
-3. batcacabe
+3. babcacabe
 
 4. bbacacabc
 
@@ -41,18 +41,23 @@ bbbacacac, на это уйдёт 9 ходов, ниже указаны стро
 
 @author: workk
 """
-def count_moves(s, c):
-    moves = 0
-    c_count = 0
-    current_c_cont = 0
 
-    for char in s :
-        if char == c:
-            c_count += 1
-            moves += current_c_conut
-        else:
-            current_c_count += 1
-            return moves 
-        input_str, target_char = input().split()
-        moves_required = count_moves(input_str, target_char)
-print ( moves_required )
+def move_characters(s, c):
+    count = 0
+    chars = list(s) 
+    for i in range(1, len(chars)):
+        if chars[i] == c:
+            j = i
+            while j > 0 and chars[j-1] != c:
+                count += 1
+                chars[j], chars[j-1] = chars[j-1], chars[j]
+                j -= 1
+    return count, chars
+
+S = "abcabcabc"
+C = "b"
+
+moves, chars = move_characters(S, C)
+print("Количество ходов:", moves)
+print("Новая строка:", "".join(chars)) 
+

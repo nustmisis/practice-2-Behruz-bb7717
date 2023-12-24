@@ -18,36 +18,16 @@
 Напишите программу, которая будет запрашивать у пользователя год 
 рождения и  выводить ассоциированное с  ним название животного по 
 китайскому гороскопу. При этом программа не должна ограничиваться 
-только годами из приведенной таблицы, а должна корректно обрабатывать все годы нашей эры.
+только годами из приведенной таблицы, а должна корректно обрабатывать все годы нашей эры.
 """
 
-year = input()
-animal_number = (year-2000) % 12
-  
-if animal_number ==0:
-    animal= "Дракон"
-elif animal_number ==1:
-    animal="Змея"
-elif animal_number ==2:
-    animal="Лощадь"
-elif animal_number ==3:
-    animal="Коза"
-elif animal_number ==4:
-    animal="Обезьяна"
-elif animal_number ==5:
-    animal="Петух"
-elif animal_number ==6:
-    animal="Собака"
-elif animal_number ==7:
-    animal="Свиня"
-elif animal_number ==8:
-    animal="Крыса"
-elif animal_number ==9:
-    animal="Бык"
-elif animal_number ==10:
-    animal="тигр"
-else:
-    animal="Кролик"
 
+year = int(input("Введите год рождения: "))
 
-print(animal)
+animaldict = {0: "Дракон", 1: "Змея ", 2: "Лошадь ", 3: "Коза ", 4: "Обезьяна", 5: "Петух", 6: "Собака", 7: "Свинья", 8: "Крыса", 9: "Бык", 10: "Тигр", 11: "Кролик"}
+startyear = 2000
+
+animalindex = (year - startyear) % 12
+animal = animaldict[animalindex]
+
+print("Ваше животное по китайскому гороскопу: ", animal)
